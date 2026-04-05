@@ -8,7 +8,7 @@ resource "digitalocean_tag" "tags" {
 resource "digitalocean_droplet" "instances" {
   count = 10
   image  = var.image
-  name   = "${var.components[count.index]}"-dev
+  name   = "${var.components[count.index]}-dev"
   region = var.region
   size   = var.size
   tags   = [digitalocean_tag.tags[count.index].id]
